@@ -33,6 +33,10 @@ const BotaoIcone = styled.button`
     position: absolute;
     bottom: 20px;
     cursor: pointer;
+    transition: all 500ms ease-in-out;
+    &:hover {
+        color: #ff4655;
+    }
 
 `
 const AgentCard = ({agent}) => {
