@@ -11,7 +11,7 @@ const CardContainer = styled.div`
 `
 const Home = () => {
     const [agents, setAgents] = useState([])
-    const urlGetAgent = `https://valorant-api.com/v1/agents?isPlayableCharacter=true`
+    const urlGetAgent = `https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=pt-BR`
     async function getAgents(url) {
     const response = await fetch(url)
     const data = await response.json();
