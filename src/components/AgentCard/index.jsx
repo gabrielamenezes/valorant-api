@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { FaRegHeart } from "react-icons/fa";
 
 const Card = styled.div`
     width: 300px;
@@ -7,25 +8,46 @@ const Card = styled.div`
     align-items: center;
     padding: 10px;
     flex-direction: column;
-    background-color: #fffffe;
     border: 1px solid #222;
-    img {
+    position: relative;
+    .imgContainer img {
         width: 200px;
     }
-    h4 {
+    
+    h3,h4,h5 {
         text-align: center;
-        margin-top: 0.8rem;
     }
+    h4 {
+        margin-top: 0.8rem;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+`
+const BotaoIcone = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+
 `
 const AgentCard = ({agent}) => {
     return (
-        <Card background={agent.background} >
+        <Card background={[agent.backgroundGradientColors]} >
             <div className="imgContainer">
                 <img src={agent.displayIcon} alt={agent.displayName} />
             </div>
             <div className="infoContainer">
                 <h4 className="agentName">{agent.displayName}</h4>
+                <h5 className="roleName">{agent.role.displayName}</h5>
             </div>
+            <BotaoIcone>
+                <FaRegHeart size="25px" />
+            </BotaoIcone>
         </Card>
     )
 }
