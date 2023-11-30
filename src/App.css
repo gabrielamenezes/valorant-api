@@ -5,4 +5,14 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+body {
+    background-color: #fff;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+ul, li {
+    list-style: none;
+}
   
