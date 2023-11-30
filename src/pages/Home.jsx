@@ -5,6 +5,9 @@ import styled from "styled-components";
 const CardContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
 `
 const Home = () => {
     const [agents, setAgents] = useState([])
@@ -20,7 +23,7 @@ const Home = () => {
   }, []) 
     return (
         <CardContainer>
-            {agents && agents.map(agent => <AgentCard agent={agent}></AgentCard>)}
+            {agents && agents.map(agent => <AgentCard key={agent.uuid} agent={agent}></AgentCard>)}
         </CardContainer>
     )
 }
