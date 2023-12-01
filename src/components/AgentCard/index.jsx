@@ -1,7 +1,5 @@
 import styled from "styled-components"
 import { FaRegHeart } from "react-icons/fa";
-import { useContext } from "react";
-import { useFavoritosContext } from "../../context/Favoritos";
 
 const Card = styled.div`
     width: 300px;
@@ -42,7 +40,6 @@ const BotaoIcone = styled.button`
 
 `
 const AgentCard = ({agent}) => {
-    const {favoritos, adicionarFavorito} = useFavoritosContext();
     return (
         <Card background={[agent.backgroundGradientColors]} >
             <div className="imgContainer">
@@ -52,7 +49,7 @@ const AgentCard = ({agent}) => {
                 <h4 className="agentName">{agent.displayName}</h4>
                 <h5 className="roleName">{agent.role.displayName}</h5>
             </div>
-            <BotaoIcone onClick={() => adicionarFavorito(agent)}>
+            <BotaoIcone>
                 <FaRegHeart size="25px" />
             </BotaoIcone>
         </Card>
