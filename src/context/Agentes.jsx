@@ -16,12 +16,14 @@ export default function AgentesProvider({children}) {
 
 export function useAgentesContext() {
     const {agentes, setAgentes} = useContext(AgentesContext);
+    const favorito = false;
     async function getAgentsAPI(url) {
         const response = await fetch(url)
         const data = await response.json();
         setAgentes(data.data)
     }
-
+   
+   
     return {
         agentes,
         setAgentes,

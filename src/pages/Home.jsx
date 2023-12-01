@@ -11,13 +11,13 @@ const CardContainer = styled.div`
     margin-top: 2rem;
 `
 const Home = () => {
-  const {agentes, getAgentsAPI} = useAgentesContext();
-
+  const {agentes, getAgentsAPI, setAgentes} = useAgentesContext();
   const urlGetAgent = `https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=pt-BR`
 
     
   useEffect(() => {
     getAgentsAPI(urlGetAgent);
+    
   }, []) 
     return (
         <CardContainer>
